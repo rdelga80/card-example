@@ -30,9 +30,9 @@ wss.on('connection', ws => {
           away: `Away ${i}`
         },
         dateString: currentDate.toLocaleDateString(),
-        moneyLine: i !== 5 ? faker.random.number({ min: -500, max: 500 }) : 40,
-        homeLine: i !== 5 ? faker.random.number({ min: -500, max: 500 }) : 100,
-        awayLine: i !== 5 ? faker.random.number({ min: -500, max: 500 }) : 200
+        moneyLine: faker.random.number({ min: -500, max: 500 }),
+        homeLine: faker.random.number({ min: -500, max: 500 }),
+        awayLine: faker.random.number({ min: -500, max: 500 })
       }))
 
       console.log(`sending ${count}`)
