@@ -13,3 +13,5 @@ See index page: [App.vue](https://github.com/rdelga80/card-example/blob/master/c
 And the card component: [GameCard.vue](https://github.com/rdelga80/card-example/blob/master/client/src/components/GameCard.vue)
 
 Each component still updates when the WebSocket returns more data, but the rendering process should be much less burdensome because the updates are kept very high and the rendering process should only run in a single high-level component.
+
+Tested up to 3000 entries with no performance issues.
