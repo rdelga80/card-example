@@ -50,7 +50,7 @@ export default {
   components: { GameCard },
 
   setup() {
-    const matches = ref()
+    const matches = ref({})
 
     onMounted(() => {
       const lineData = new WebSocket('ws://localhost:8999')
@@ -74,12 +74,12 @@ export default {
 <style scoped>
 .card-row {
   display: flex;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  flex-wrap: wrap;
   padding: 16px;
 }
 
 .card-row > * {
   margin-right: 8px;
+  margin-bottom: 8px;
 }
 </style>

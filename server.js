@@ -23,23 +23,23 @@ wss.on('connection', ws => {
     const sendInterval = setInterval(() => {
       const currentDate = new Date(2021, 1, 26)
 
-      const games = [...Array(20)].map((_, i) => ({
+      const games = [...Array(3000)].map((_, i) => ({
         id: i,
         teams: {
           home: `Home ${i}`,
           away: `Away ${i}`
         },
         dateString: currentDate.toLocaleDateString(),
-        moneyLine: i % 3 ? faker.random.number({ min: -500, max: 500 }) : 40,
-        homeLine: i % 5 ? faker.random.number({ min: -500, max: 500 }) : 100,
-        awayLine: i % 2 ? faker.random.number({ min: -500, max: 500 }) : 200
+        moneyLine: i !== 5 ? faker.random.number({ min: -500, max: 500 }) : 40,
+        homeLine: i !== 5 ? faker.random.number({ min: -500, max: 500 }) : 100,
+        awayLine: i !== 5 ? faker.random.number({ min: -500, max: 500 }) : 200
       }))
 
       console.log(`sending ${count}`)
       ws.send(JSON.stringify(games))
       count++
 
-      if (count > 10) {
+      if (count > 50) {
         clearInterval(sendInterval)
         ws.terminate()
       }

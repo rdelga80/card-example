@@ -35,6 +35,8 @@
 </template>
 
 <script>
+import { onUpdated } from 'vue'
+
 export default {
   name: 'GameCard',
 }
